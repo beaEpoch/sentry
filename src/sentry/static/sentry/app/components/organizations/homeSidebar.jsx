@@ -28,9 +28,7 @@ const OrgSettingsMenu = ({access, org, features}) => {
   if (!access.has('org:write') && !access.has('member:read')) return null;
 
   let hasNewSettings = features.has('new-settings');
-  let pathPrefix = `${hasNewSettings
-    ? '/settings/organization'
-    : '/organizations'}/${org.slug}`;
+  let pathPrefix = `${hasNewSettings ? '/settings' : '/organizations'}/${org.slug}`;
 
   return (
     <div>
@@ -119,9 +117,7 @@ const HomeSidebar = createReactClass({
     let org = this.getOrganization();
 
     let hasNewSettings = features.has('new-settings');
-    let pathPrefix = `${hasNewSettings
-      ? '/settings/organization'
-      : '/organizations'}/${org.slug}`;
+    let pathPrefix = `${hasNewSettings ? '/settings' : '/organizations'}/${org.slug}`;
     let orgId = org.slug;
 
     return (
