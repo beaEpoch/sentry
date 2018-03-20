@@ -84,3 +84,7 @@ export function transferProject(api, orgId, project, email) {
       }
     );
 }
+
+export function changeProjectSlug(prev, next) {
+  ProjectActions.changeSlug(prev, next);
+}
