@@ -102,7 +102,7 @@ const OrganizationGeneralSettingsView = createReactClass({
   handleSave(prevData, data) {
     if (data.slug && data.slug !== prevData.slug) {
       changeOrganizationSlug(prevData, data);
-      browserHistory.push(`/settings/${data.slug}/settings/`);
+      browserHistory.push(`/settings/${data.slug}/`);
     } else {
       // TODO(dcramer): this should propagate
       this.setState({data});
