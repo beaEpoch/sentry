@@ -97,7 +97,8 @@ const ProjectContext = createReactClass({
       prevState.project !== this.state.project ||
       prevState.organization !== this.state.organization
     ) {
-      let docTitle = this.refs.docTitle;
+      if (!this.docTitle) return;
+      let docTitle = this.docTitleRef.docTitle;
       if (docTitle) docTitle.forceUpdate();
     }
   },
@@ -237,7 +238,7 @@ const ProjectContext = createReactClass({
 
   render() {
     return (
-      <DocumentTitle ref="docTitle" title={this.getTitle()}>
+      <DocumentTitle ref={ref => (this.docTitleRef = ref)} title={this.getTitle()}>
         {this.renderBody()}
       </DocumentTitle>
     );
